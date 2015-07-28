@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a request to update an API.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class UpdateApiDefinitionResponse {
 
 	private String key;

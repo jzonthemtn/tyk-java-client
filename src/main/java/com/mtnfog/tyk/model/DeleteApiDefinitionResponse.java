@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a request to delete an API.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class DeleteApiDefinitionResponse {
 
 	private String key;

@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A response to creating an organization key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class CreateOrganizationKeyResponse {
 
 	@SerializedName(value="key")

@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A request to create an API key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class CreateKeyRequest {
 
 	private int allowance;

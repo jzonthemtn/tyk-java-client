@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a request to delete an organization key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class DeleteOrganizationKeyResponse {
 
 	private String key;

@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a request to update an organization key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class UpdateOrganizationKeyResponse {
 
 	private String key;

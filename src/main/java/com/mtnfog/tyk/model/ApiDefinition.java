@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * The definition of an API.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class ApiDefinition {
 
 	private String location;

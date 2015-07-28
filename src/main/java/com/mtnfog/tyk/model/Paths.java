@@ -7,14 +7,22 @@ import com.google.gson.annotations.SerializedName;
 
 public class Paths {
 
-	private List<Object> ignored = new ArrayList<Object>();
+	private List<Object> ignored;
 	
 	@SerializedName("white_list")
-	private List<Object> whiteList = new ArrayList<Object>();
+	private List<Object> whiteList;
 	
 	@SerializedName("black_list")
-	private List<Object> blackList = new ArrayList<Object>();
+	private List<Object> blackList;
 
+	public Paths() {
+		
+		ignored = new ArrayList<Object>();
+		whiteList = new ArrayList<Object>();
+		blackList = new ArrayList<Object>();
+		 
+	}
+	
 	public List<Object> getIgnored() {
 		return ignored;
 	}

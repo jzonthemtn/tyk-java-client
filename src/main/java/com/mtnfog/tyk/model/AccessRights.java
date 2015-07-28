@@ -13,7 +13,13 @@ public class AccessRights {
 	@SerializedName("api_id")
 	private String apiId;
 	
-	private List<String> versions = new ArrayList<String>();
+	public AccessRights() {
+		
+		versions = new ArrayList<String>();
+		
+	}
+	
+	private List<String> versions;
 
 	public String getApiName() {
 		return apiName;

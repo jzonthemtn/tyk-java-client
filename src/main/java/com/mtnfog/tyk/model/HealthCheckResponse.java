@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A response to a health check request.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class HealthCheckResponse {
 
 	@SerializedName(value="throttle_requests_per_second")

@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A response to to a request to authorize an OAuth flow request.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class OAuthAuthorizationFlowResponse {
 
 	private String code;

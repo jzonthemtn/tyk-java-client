@@ -1,16 +1,9 @@
 package com.mtnfog.tyk.model;
 
-import com.google.gson.annotations.Expose;
-
 public class Default {
 
-	@Expose
 	private String name;
-	
-	@Expose
 	private String expires;
-	
-	@Expose
 	private Paths paths;
 
 	public String getName() {

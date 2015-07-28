@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Defines an OAuth client.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class OAuthClient {
 
 	@SerializedName(value="client_id")

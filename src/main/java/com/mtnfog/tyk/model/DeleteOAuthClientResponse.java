@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a request to delete an OAuth client.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class DeleteOAuthClientResponse {
 
 	private String key;

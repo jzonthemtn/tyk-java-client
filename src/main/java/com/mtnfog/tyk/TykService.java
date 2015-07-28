@@ -14,6 +14,7 @@ import com.mtnfog.tyk.model.HealthCheckResponse;
 import com.mtnfog.tyk.model.HotReloadResponse;
 import com.mtnfog.tyk.model.CreateKeyRequest;
 import com.mtnfog.tyk.model.CreateKeyResponse;
+import com.mtnfog.tyk.model.CreateOAuthClientRequest;
 import com.mtnfog.tyk.model.DeleteKeyResponse;
 import com.mtnfog.tyk.model.OAuthAuthorizationFlowResponse;
 import com.mtnfog.tyk.model.UpdateApiDefinitionResponse;
@@ -31,6 +32,12 @@ import retrofit.http.PUT;
 import retrofit.http.Path;
 import retrofit.http.Query;
 
+/**
+ * The Tyk 1.7 REST API interface.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public interface TykService {
 
 	// Api Key Management
@@ -42,13 +49,13 @@ public interface TykService {
 	CreateKeyResponse createApiKey(@Path("apiKey") String apiKey, @Body CreateKeyRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	@DELETE("/tyk/keys/{apiKey}")
-	DeleteKeyResponse deleteApiKdy(@Path("apiKey") String apiKey, @Header("x-tyk-authorization") String tykAuthKey);
+	DeleteKeyResponse deleteApiKey(@Path("apiKey") String apiKey, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	@GET("/tyk/keys")
-	GetKeysResponse getKeys(@Header("x-tyk-authorization") String tykAuthKey);
+	GetKeysResponse getApiKeys(@Header("x-tyk-authorization") String tykAuthKey);
 	
 	@GET("/tyk/keys")
-	GetKeysResponse getKeys(@Query("api_id") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
+	GetKeysResponse getApiKeys(@Query("api_id") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	// API Management
 	
@@ -67,12 +74,14 @@ public interface TykService {
 	HealthCheckResponse checkHealth(@Query("api_id") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	// Hot Reload
+	
 	@GET("/tyk/reload/group")
 	HotReloadResponse hotReload(@Header("x-tyk-authorization") String tykAuthKey);
 	
 	// OAuth Key Management
+	
 	@POST("/tyk/oauth/clients/create")
-	CreateOAuthClientResponse createOAuthClient(@Header("x-tyk-authorization") String tykAuthKey);
+	CreateOAuthClientResponse createOAuthClient(@Body CreateOAuthClientRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	@DELETE("/tyk/oauth/clients/{apiId}/{clientId}")
 	DeleteOAuthClientResponse deleteOAuthClient(@Path("apiId") String apiId, @Path("clientId") String clientId, @Header("x-tyk-authorization") String tykAuthKey);

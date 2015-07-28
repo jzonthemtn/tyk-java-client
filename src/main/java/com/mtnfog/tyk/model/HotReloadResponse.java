@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to a hot reload request.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class HotReloadResponse {
 
 	private String status;

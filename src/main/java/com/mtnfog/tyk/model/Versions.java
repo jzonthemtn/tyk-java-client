@@ -11,8 +11,8 @@ public class Versions {
 		return defaultVersion;
 	}
 
-	public void setDefault(Default Default) {
-		this.defaultVersion = Default;
+	public void setDefault(Default defaultVersion) {
+		this.defaultVersion = defaultVersion;
 	}
 
 }

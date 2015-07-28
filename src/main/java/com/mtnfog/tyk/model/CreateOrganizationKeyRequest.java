@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A request to create an organization key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class CreateOrganizationKeyRequest {
 
 	private int allowance;	

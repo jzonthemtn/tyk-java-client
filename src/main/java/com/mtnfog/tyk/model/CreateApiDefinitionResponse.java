@@ -1,5 +1,11 @@
 package com.mtnfog.tyk.model;
 
+/**
+ * A response to create a new API.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class CreateApiDefinitionResponse {
 
 	private String key;

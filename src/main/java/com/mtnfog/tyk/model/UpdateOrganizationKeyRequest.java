@@ -2,6 +2,12 @@ package com.mtnfog.tyk.model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * A request to update an organization key.
+ * 
+ * @author Mountain Fog, Inc.
+ *
+ */
 public class UpdateOrganizationKeyRequest {
 
 	@SerializedName(value="quota_max")
