@@ -2,6 +2,9 @@ package com.mtnfog.tyk;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.google.gson.Gson;
 import com.mtnfog.tyk.model.ApiDefinition;
 import com.mtnfog.tyk.model.CreateApiDefinitionResponse;
@@ -36,6 +39,8 @@ import retrofit.converter.GsonConverter;
  *
  */
 public class TykClient  {
+	
+	private static final Logger LOGGER = LogManager.getLogger(TykClient.class);
    
 	private TykService tykService;
 	private String tykAuthKey;
@@ -111,17 +116,7 @@ public class TykClient  {
 		return tykService.deleteApiKey(apiKey, tykAuthKey);
 		
 	}
-	
-	/**
-	 * Gets all API keys.
-	 * @return A {@link GetKeysResponse response} containing the API keys.
-	 */
-	public GetKeysResponse getApiKeys() {
 		
-		return tykService.getApiKeys(tykAuthKey);
-		
-	}
-	
 	/**
 	 * Gets all API keys for an API.
 	 * @param apiId The ID of the API.

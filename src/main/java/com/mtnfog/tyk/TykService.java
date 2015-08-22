@@ -42,19 +42,23 @@ public interface TykService {
 
 	// Api Key Management
 	
-	@POST("/tyk/keys/create")
+	@POST("/tyk/keys/create/")
 	CreateKeyResponse createApiKey(@Body CreateKeyRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@POST("/tyk/keys/{apiKey}")
+	@POST("/tyk/keys/{apiKey}/")
 	CreateKeyResponse createApiKey(@Path("apiKey") String apiKey, @Body CreateKeyRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@DELETE("/tyk/keys/{apiKey}")
+	@DELETE("/tyk/keys/{apiKey}/")
 	DeleteKeyResponse deleteApiKey(@Path("apiKey") String apiKey, @Header("x-tyk-authorization") String tykAuthKey);
-	
-	@GET("/tyk/keys")
-	GetKeysResponse getApiKeys(@Header("x-tyk-authorization") String tykAuthKey);
-	
-	@GET("/tyk/keys")
+		
+	/**
+	 * Get the keys for an API. Note that if Tyk is running in hashed key mode no keys will be returned due
+	 * to the encryption of the keys.
+	 * @param apiId The ID of the API.
+	 * @param tykAuthKey The Tyk authentication key.
+	 * @return A {@link GetKeysResponse response} containing the API keys.
+	 */
+	@GET("/tyk/keys/")
 	GetKeysResponse getApiKeys(@Query("api_id") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	// API Management
@@ -62,31 +66,31 @@ public interface TykService {
 	@POST("/tyk/apis/")
 	CreateApiDefinitionResponse createApiDefinition(@Body ApiDefinition apiDefinition, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@PUT("/tyk/apis/{apiId}")
+	@PUT("/tyk/apis/{apiId}/")
 	UpdateApiDefinitionResponse updateApiDefinition(@Path("apiId") String apiId, @Body ApiDefinition apiDefinition, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@DELETE("/tyk/apis/{apiId}")
+	@DELETE("/tyk/apis/{apiId}/")
 	DeleteApiDefinitionResponse deleteApiDefinition(@Path("apiId") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	// Health Check
 	
-	@GET("/tyk/health")
+	@GET("/tyk/health/")
 	HealthCheckResponse checkHealth(@Query("api_id") String apiId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	// Hot Reload
 	
-	@GET("/tyk/reload/group")
+	@GET("/tyk/reload/group/")
 	HotReloadResponse hotReload(@Header("x-tyk-authorization") String tykAuthKey);
 	
 	// OAuth Key Management
 	
-	@POST("/tyk/oauth/clients/create")
+	@POST("/tyk/oauth/clients/create/")
 	CreateOAuthClientResponse createOAuthClient(@Body CreateOAuthClientRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@DELETE("/tyk/oauth/clients/{apiId}/{clientId}")
+	@DELETE("/tyk/oauth/clients/{apiId}/{clientId}/")
 	DeleteOAuthClientResponse deleteOAuthClient(@Path("apiId") String apiId, @Path("clientId") String clientId, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@GET("/tyk/oauth/clients/{apiId}")
+	@GET("/tyk/oauth/clients/{apiId}/")
 	GetOAuthClientsResponse getOAuthClients(@Path("apiId") String apiId, @Path("clientId") String clientId, @Header("x-tyk-authorization") String tykAuthKey);
 	
 	@FormUrlEncoded
@@ -98,13 +102,13 @@ public interface TykService {
 	@POST("/tyk/orgs/keys/")
 	CreateOrganizationKeyResponse createOrganizationKey(@Body CreateOrganizationKeyRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@POST("/tyk/orgs/keys/{orgId}")
+	@POST("/tyk/orgs/keys/{orgId}/")
 	UpdateOrganizationKeyResponse updateOrganizationKey(@Body UpdateOrganizationKeyRequest request, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@PUT("/tyk/orgs/keys/{orgId}")
+	@PUT("/tyk/orgs/keys/{orgId}/")
 	UpdateOrganizationKeyResponse updateOrganizationKey(@Body UpdateOrganizationKeyRequest request, @Query("reset_quota") int resetQuota, @Header("x-tyk-authorization") String tykAuthKey);
 	
-	@DELETE("/tyk/orgs/keys/{orgId}")
+	@DELETE("/tyk/orgs/keys/{orgId}/")
 	DeleteOrganizationKeyResponse deleteOrganizationKey(@Path("orgId") String orgId, @Header("x-tyk-authorization") String tykAuthKey);
 
 	@GET("/tyk/org/keys/")
