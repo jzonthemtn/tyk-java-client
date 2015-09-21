@@ -33,7 +33,7 @@ import retrofit.http.Path;
 import retrofit.http.Query;
 
 /**
- * The Tyk 1.7 REST API interface.
+ * The Tyk REST API interface.
  * 
  * @author Mountain Fog, Inc.
  *

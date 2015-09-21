@@ -33,7 +33,7 @@ import retrofit.client.OkClient;
 import retrofit.converter.GsonConverter;
 
 /**
- * A client implementation of the Tyk 1.7 REST API.
+ * A client implementation of the Tyk REST API.
  * 
  * @author Mountain Fog, Inc.
  *

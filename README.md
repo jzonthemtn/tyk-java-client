@@ -1,6 +1,6 @@
 # Tyk Java Client
 
-This is a Java client for the [Tyk API Gateway](https://tyk.io/) available on [GitHub](https://github.com/lonelycode/tyk). This project fully implements the Tyk [v1.7](https://tyk.io/v1.7/rest-api/overview/) REST API. This client has not been fully tested and is still in development so please report any issues or problems. The goal of this project is to provide a client for Tyk to provide integration between Tyk and Java applications.
+This is a Java client for the [Tyk API Gateway](https://tyk.io/) available on [GitHub](https://github.com/lonelycode/tyk). This project fully implements the Tyk [v1.8](https://tyk.io/v1.8/rest-api/overview/) REST API. This client has not been fully tested and is still in development so please report any issues or problems. The goal of this project is to provide a client for Tyk to provide integration between Tyk and Java applications.
 
 The REST API client is provided by [Retrofit](https://github.com/square/retrofit).
 
